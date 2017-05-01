@@ -2,14 +2,26 @@ import Vue from 'vue';
 import FastClick from 'fastclick';
 import VueRouter from 'vue-router';
 import App from './App';
-import Home from './components/HelloFromVux';
+import Home from './views/Home';
+import Square from './views/Square';
+import Me from './views/Me';
 
 Vue.use(VueRouter);
 
-const routes = [{
-  path: '/',
-  component: Home,
-}];
+const routes = [
+  {
+    path: '/',
+    component: Home,
+  },
+  {
+    path: '/square',
+    component: Square,
+  },
+  {
+    path: '/me',
+    component: Me,
+  },
+];
 
 const router = new VueRouter({
   routes,
