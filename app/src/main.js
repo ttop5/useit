@@ -5,6 +5,8 @@ import App from './App';
 import Home from './views/Home';
 import Square from './views/Square';
 import Me from './views/Me';
+import Login from './views/Login';
+import Register from './views/Register';
 
 Vue.use(VueRouter);
 
@@ -20,6 +22,14 @@ const routes = [
   {
     path: '/me',
     component: Me,
+  },
+  {
+    path: '/login',
+    component: Login,
+  },
+  {
+    path: '/register',
+    component: Register,
   },
 ];
 
