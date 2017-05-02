@@ -2,18 +2,25 @@
   <div>
     <div class="bottombar-view">
       <tabbar>
-        <TabbarItem
+        <tabbar-item
           link='/'>
+          <img slot="icon" src="https://o84lhz5xo.qnssl.com/master/src/assets/demo/icon_nav_button.png">
           <span slot="label">首页</span>
-        </TabbarItem>
-        <TabbarItem
+        </tabbar-item>
+        <tabbar-item>
+          <img slot="icon" src="https://o84lhz5xo.qnssl.com/master/src/assets/demo/icon_nav_msg.png">
+          <span slot="label">新闻</span>
+        </tabbar-item>
+        <tabbar-item
           link='/square'>
+          <img slot="icon" src="https://o84lhz5xo.qnssl.com/master/src/assets/demo/icon_nav_article.png">
           <span slot="label">广场</span>
-        </TabbarItem>
-        <TabbarItem
+        </tabbar-item>
+        <tabbar-item
           link='/me'>
+          <img slot="icon" src="https://o84lhz5xo.qnssl.com/master/src/assets/demo/icon_nav_cell.png">
           <span slot="label">我的</span>
-        </TabbarItem>
+        </tabbar-item>
       </tabbar>
     </div>
   </div>
