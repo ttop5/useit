@@ -5,7 +5,7 @@ const dateformat = require('dateformat')
 
 // 首页
 const news = []
-for (let i=0; i<20; i++) {
+for (let i=1; i<=20; i++) {
   news.push({
     id: i,
     title: `大事不好啦！皮革厂老板跟小姨子跑啦！—— ${i}`,
@@ -16,15 +16,28 @@ for (let i=0; i<20; i++) {
 
 // 广场
 const square = []
-for (let i=0; i<20; i++) {
+for (let i=1; i<=20; i++) {
   square.push({
     id: i,
     user: `user-${i}`,
-    content: '我是个数码达人，我喜欢各种电子产品。'
+    content: '我是个数码达人，我喜欢各种电子产品。',
   })
 }
+
+// 用户
+const users = []
+for (let i = 1; i <=20 ; i++) {
+  users.push({
+    'id': i,
+    'username': `user${i}`,
+    'password': 'passwd',
+    'email': `user${i}@qq.com`,
+  })
+}
+
 
 module.exports = {
   news,
   square,
+  users,
 }
