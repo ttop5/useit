@@ -4,8 +4,8 @@
     <div class="content">
       <h1>欢迎加入UseIt</h1>
       <group>
+        <x-input placeholder="用户名" is-type="text"></x-input>
         <x-input placeholder="邮箱" is-type="email"></x-input>
-        <x-input placeholder="昵称" is-type="email"></x-input>
         <x-input placeholder="密码" :min="6" type="password"></x-input>
         <x-input placeholder="密码确认" :min="6" type="password"></x-input>
       </group>
