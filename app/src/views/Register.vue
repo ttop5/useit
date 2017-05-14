@@ -76,18 +76,17 @@ export default {
 </script>
 
 
-<style>
-.register-view .content {
-  padding: 50px 10px 10px 10px;
-}
-.register-view .header {
-  background-color: #fbf9fe;
-}
-.register-view h1 {
-  text-align: center;
-  color: #35495e;
-}
-.errorMessage {
-  color: #f73100;
+<style lang="less">
+.register-view{
+  .content {
+    padding: 50px 10px 10px 10px;
+  }
+  .header {
+    background-color: #fbf9fe;
+  }
+  h1 {
+    text-align: center;
+    color: #35495e;
+  }
 }
 </style>

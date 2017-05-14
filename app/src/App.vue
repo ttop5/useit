@@ -18,4 +18,15 @@ export default {
 body {
   background-color: #fbf9fe;
 }
+.vux-header, .weui-tabbar {
+  position: fixed !important;
+  width: 100%;
+}
+.content {
+  padding-top: 45px;
+  padding-bottom: 55px;
+}
+.errorMessage {
+  color: #f73100;
+}
 </style>

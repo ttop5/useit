@@ -1,5 +1,5 @@
 <template>
-  <div class="square-view">
+  <div class="me-view">
     <x-header :left-options="{showBack: false}">我的</x-header>
     <div class="content">
       <div v-if="username !== null">
@@ -45,8 +45,5 @@ export default {
 </script>
 
 
-<style>
-.square-view button.weui-btn, input.weui-btn {
-  width: 50%;
-}
+<style lang="less">
 </style>

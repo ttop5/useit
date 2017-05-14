@@ -34,12 +34,5 @@ export default {
 </script>
 
 
-<style>
-.vux-header, .weui-tabbar {
-  position: fixed !important;
-  width: 100%;
-}
-.content {
-  padding-top: 45px;
-}
+<style lang="less">
 </style>
