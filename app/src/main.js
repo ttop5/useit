@@ -6,6 +6,9 @@ import Home from './views/Home';
 import News from './views/News';
 import Square from './views/Square';
 import Me from './views/Me';
+import MyArticle from './views/MyArticle';
+import AccountSetting from './views/AccountSetting';
+import ResetPasswd from './views/ResetPasswd';
 import AboutSoft from './views/AboutSoft';
 import Login from './views/Login';
 import Register from './views/Register';
@@ -28,6 +31,18 @@ const routes = [
   {
     path: '/me',
     component: Me,
+  },
+  {
+    path: '/myarticle',
+    component: MyArticle,
+  },
+  {
+    path: '/accountsetting',
+    component: AccountSetting,
+  },
+  {
+    path: '/resetpasswd',
+    component: ResetPasswd,
   },
   {
     path: '/aboutsoft',
