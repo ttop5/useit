@@ -20,7 +20,7 @@ const square = []
 for (let i=1; i<=20; i++) {
   square.push({
     'id': i,
-    'user': `user-${i}`,
+    'user': `回家看动画-${i}`,
     'content': '我是个数码达人，我喜欢各种电子产品啊哈哈哈哈哈哈哈哈。',
     'dateTime': dateformat(faker.date.between('2017-01-01', '2017-05-30'), 'yyyy-mm-dd hh:MM:ss'),
   })
@@ -31,7 +31,7 @@ const users = []
 for (let i = 1; i <=20 ; i++) {
   users.push({
     'id': i,
-    'username': `user${i}`,
+    'username': `回家看动画${i}`,
     'password': 'passwd',
     'email': `user${i}@qq.com`,
     'dateTime': dateformat(faker.date.between('2017-01-01', '2017-05-30'), 'yyyy-mm-dd hh:MM:ss'),
