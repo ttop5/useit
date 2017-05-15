@@ -6,6 +6,7 @@ import Home from './views/Home';
 import News from './views/News';
 import Square from './views/Square';
 import Me from './views/Me';
+import AboutSoft from './views/AboutSoft';
 import Login from './views/Login';
 import Register from './views/Register';
 
@@ -27,6 +28,10 @@ const routes = [
   {
     path: '/me',
     component: Me,
+  },
+  {
+    path: '/aboutsoft',
+    component: AboutSoft,
   },
   {
     path: '/login',
