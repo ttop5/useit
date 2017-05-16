@@ -8,7 +8,7 @@ import Square from './views/Square';
 import Me from './views/Me';
 import MyArticle from './views/MyArticle';
 import AccountSetting from './views/AccountSetting';
-import ResetPasswd from './views/ResetPasswd';
+import ChangePasswd from './views/ChangePasswd';
 import AboutSoft from './views/AboutSoft';
 import Login from './views/Login';
 import Register from './views/Register';
@@ -41,8 +41,8 @@ const routes = [
     component: AccountSetting,
   },
   {
-    path: '/resetpasswd',
-    component: ResetPasswd,
+    path: '/changepasswd',
+    component: ChangePasswd,
   },
   {
     path: '/aboutsoft',

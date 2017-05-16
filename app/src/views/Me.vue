@@ -13,7 +13,7 @@
         <group>
           <cell-box is-link link="/myarticle">我的动态</cell-box>
           <cell-box is-link link="/accountsetting">账号设置</cell-box>
-          <cell-box is-link link="/resetpasswd">密码重置</cell-box>
+          <cell-box is-link link="/changepasswd">密码修改</cell-box>
           <cell-box is-link link="/aboutsoft">关于UseIt</cell-box>
         </group>
         <x-button @click.native="logout" type="warn">退出登陆</x-button>

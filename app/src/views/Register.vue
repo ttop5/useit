@@ -12,7 +12,6 @@
       <p class="errorMessage">{{ errorMessage }}</p>
       <x-button type="primary" @click.native="register">注册</x-button>
     </div>
-
     <div>
        <alert v-model="alertShow" :title="alertTitle" :content="alertContent"></alert>
     </div>
