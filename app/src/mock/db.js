@@ -33,7 +33,10 @@ for (let i = 1; i <=20 ; i++) {
     'id': i,
     'username': `回家看动画${i}`,
     'password': 'passwd',
+    'sex':  faker.random.arrayElement(['男', '女']),
+    'birthday': dateformat(faker.date.between('1990-01-01', '2000-05-30'), 'yyyy-mm-dd'),
     'email': `user${i}@qq.com`,
+    'describe': '人非商品，何需简介！',
     'dateTime': dateformat(faker.date.between('2017-01-01', '2017-05-30'), 'yyyy-mm-dd hh:MM:ss'),
   })
 }
