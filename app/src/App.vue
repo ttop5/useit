@@ -21,6 +21,7 @@ body {
 .vux-header, .weui-tabbar {
   position: fixed !important;
   width: 100%;
+  z-index: 100;
 }
 .content {
   padding-top: 45px;

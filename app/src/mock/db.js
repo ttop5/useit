@@ -21,9 +21,14 @@ const square = []
 for (let i=1; i<=20; i++) {
   square.push({
     'id': i,
+    'img':  faker.random.arrayElement([
+      'https://cdn.xiaotaojiang.com/uploads/82/1572ec37969ee263735262dc017975/_.jpg',
+      'https://cdn.xiaotaojiang.com/uploads/59/b22e0e62363a4a652f28630b3233b9/_.jpg',
+      'https://cdn.xiaotaojiang.com/uploads/56/4b3601364b86fdfd234ef11d8712ad/_.jpg',
+    ]),
     'user': `回家看动画-${i}`,
-    'content': '我是个数码达人，我喜欢各种电子产品啊哈哈哈哈哈哈哈哈。',
-    'dateTime': dateformat(faker.date.between('2017-01-01', '2017-05-30'), 'yyyy-mm-dd hh:MM:ss'),
+    'content': '我是个数码达人，我喜欢各种电子产品。',
+    'dateTime': dateformat(faker.date.between('2017-01-01', '2017-05-30'), 'yyyy-mm-dd hh:MM'),
   })
 }
 
