@@ -2,11 +2,8 @@
   <div class="news-view">
     <x-header :left-options="{showBack: false}">新闻</x-header>
     <div class="content">
-      <p>News</p>
-      <div v-for="news in newsList">
-        <h2>{{ news.title }}</h2>
-        <p>{{ news.content }}</p>
-      </div>
+      <panel header="今日热点" :list="newsList" type="1"></panel>
+      <divider>我是有底线的</divider>
     </div>
     <bottom-bar></bottom-bar>
   </div>
@@ -14,14 +11,16 @@
 
 
 <script>
-import { XHeader } from 'vux';
+import { XHeader, Panel, Divider } from 'vux';
 import BottomBar from '../components/BottomBar';
 import { httpGet } from '../lib/api';
 
 export default {
   components: {
     XHeader,
+    Panel,
     BottomBar,
+    Divider,
   },
   data() {
     return {
