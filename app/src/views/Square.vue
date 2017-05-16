@@ -3,9 +3,9 @@
     <x-header :left-options="{showBack: false}">广场</x-header>
     <div class="content">
       <p>Square</p>
-      <div v-for="circle in circleList">
-        <p>{{ circle.user }}：</p>
-        <p>{{ circle.content }}</p>
+      <div v-for="article in articleList">
+        <p>{{ article.user }}：</p>
+        <p>{{ article.content }}</p>
       </div>
     </div>
     <bottom-bar></bottom-bar>
@@ -25,13 +25,13 @@ export default {
   },
   data() {
     return {
-      circleList: [],
+      articleList: [],
     };
   },
   methods: {
     getCircleList() {
       httpGet('/square').then((response) => {
-        this.circleList = response.data;
+        this.articleList = response.data;
       });
     },
   },

@@ -59,7 +59,7 @@ export default {
       padding-top: 20px;
     }
     .payme {
-      width: 75%;
+      width: 70%;
       height: 280px;
     }
     .about {
