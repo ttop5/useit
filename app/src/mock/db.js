@@ -8,28 +8,33 @@ const news = []
 for (let i=1; i<=20; i++) {
   news.push({
     'id': i,
-    'src': 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
-    'title': `大事不好啦！—— ${i}`,
-    'desc': '浙江温州，浙江温州，最大皮革厂，江南皮革厂倒闭了！王八蛋老板黄鹤吃喝嫖赌，欠下了3.5个亿，带着他的小姨子跑了。我们没有没有办法，拿着钱包抵公司。原价都是三百多、二百多、一百多的钱包，通通二十块，通通二十块！黄鹤王八蛋，你不是人，我们辛辛苦苦给你干了大半年，你不发工资，你还我血汗钱，还我血汗钱！',
-    'dateTime': dateformat(faker.date.between('2017-01-01', '2017-05-30'), 'yyyy-mm-dd hh:MM:ss'),
+    'img':  faker.random.arrayElement([
+      'https://cdn.xiaotaojiang.com/uploads/82/1572ec37969ee263735262dc017975/_.jpg',
+      'https://cdn.xiaotaojiang.com/uploads/59/b22e0e62363a4a652f28630b3233b9/_.jpg',
+      'https://cdn.xiaotaojiang.com/uploads/56/4b3601364b86fdfd234ef11d8712ad/_.jpg',
+    ]),
+    'title': `老板跟小姨子跑啦！-${i}`,
+    'desc': '浙江温州，江南皮革厂倒闭了，老板黄鹤跟着小姨子跑啦！我们没有办法...',
+    'content': '浙江温州，浙江温州，最大皮革厂，江南皮革厂倒闭了！王八蛋老板黄鹤吃喝嫖赌，欠下了3.5个亿，带着他的小姨子跑了。我们没有没有办法，拿着钱包抵公司。原价都是三百多、二百多、一百多的钱包，通通二十块，通通二十块！黄鹤王八蛋，你不是人，我们辛辛苦苦给你干了大半年，你不发工资，你还我血汗钱，还我血汗钱！',
     'url': '/',
+    'dateTime': dateformat(faker.date.between('2017-01-01', '2017-05-30'), 'yyyy-mm-dd hh:MM'),
   })
 }
 
 // 广场
 const square = []
 for (let i=1; i<=20; i++) {
-  square.push({
+  square.push([{
     'id': i,
-    'img':  faker.random.arrayElement([
-      'https://cdn.xiaotaojiang.com/uploads/82/1572ec37969ee263735262dc017975/_.jpg',
-      'https://cdn.xiaotaojiang.com/uploads/59/b22e0e62363a4a652f28630b3233b9/_.jpg',
-      'https://cdn.xiaotaojiang.com/uploads/56/4b3601364b86fdfd234ef11d8712ad/_.jpg',
-    ]),
-    'user': `回家看动画-${i}`,
-    'content': '我是个数码达人，我喜欢各种电子产品。',
+    'user': `回家看动画${i}`,
+    'star': 4,
+    'content': `配置给力，外观牛逼，屏占比超高啊！${i}`,
+    'src': 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
+    'title': `小米MIX手机 —— ${i}`,
+    'desc': '8.5分/北京小米科技有限公司/2016-05-01',
+    'url': '/',
     'dateTime': dateformat(faker.date.between('2017-01-01', '2017-05-30'), 'yyyy-mm-dd hh:MM'),
-  })
+  }])
 }
 
 // 用户

@@ -1,8 +1,7 @@
 <template>
   <div class="my-article-view">
-    <x-header class="header" :left-options="{backText: ''}">关于软件</x-header>
+    <x-header class="header" :left-options="{backText: ''}">我的动态</x-header>
     <div class="content">
-      <p>我的动态</p>
     </div>
   </div>
 </template>
