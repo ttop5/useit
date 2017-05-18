@@ -3,7 +3,34 @@
 const faker = require('faker')
 const dateformat = require('dateformat')
 
-// 首页
+// 热门搜索
+const hotSearch = []
+for (let i=1; i<=20; i++) {
+  hotSearch.push({
+    'id': i,
+    'hot': i*10,
+    'product': `小米MIX手机 -- ${i}`,
+    'productType': faker.random.arrayElement(['手机', '平板', '电脑', '相机', '手环']),
+    'url': '/',
+  })
+}
+
+// 电子产品列表
+const products = []
+for (let i=1; i<=200; i++) {
+  products.push({
+    'id': i,
+    'productName': `小米MIX手机 -- ${i}`,
+    'imgUrl': 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
+    'publicTime': dateformat(faker.date.between('2000-01-01', '2017-05-30'), 'yyyy-mm-dd'),
+    'productType': faker.random.arrayElement(['手机', '平板', '电脑', '相机', '手环']),
+    'company': '北京小米科技有限公司',
+    'grade': '8',
+    'useCount': faker.random.number(),
+  })
+}
+
+// 新闻
 const news = []
 for (let i=1; i<=20; i++) {
   news.push({
@@ -54,6 +81,8 @@ for (let i = 1; i <=20 ; i++) {
 
 
 module.exports = {
+  hotSearch,
+  products,
   news,
   square,
   users,
