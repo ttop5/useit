@@ -25,7 +25,8 @@
         </swiper-item>
       </swiper>
       <group title="搜索热榜">
-        <cell-box v-for="item in hotSearchList" link="/news" class="hot-item" key=item.id>
+        <cell-box v-for="item in hotSearchList" class="hot-item" key=item.id
+          @click.native="showDetails(item.id)">
           <span>{{ item.id }}</span>
           <span>{{ item.product }}</span>
           <span>{{ item.productType }}</span>
@@ -91,6 +92,9 @@ export default {
     },
     onCancel () {
       console.log('on cancel');
+    },
+    showDetails(id) {
+      this.$router.push({ path: `/products?id=${id}` });
     },
   },
   created() {

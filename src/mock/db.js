@@ -11,7 +11,6 @@ for (let i=1; i<=20; i++) {
     'hot': i*10,
     'product': `小米MIX手机 -- ${i}`,
     'productType': faker.random.arrayElement(['手机', '平板', '电脑', '相机', '手环']),
-    'url': '/',
   })
 }
 
@@ -20,13 +19,15 @@ const products = []
 for (let i=1; i<=200; i++) {
   products.push({
     'id': i,
-    'productName': `小米MIX手机 -- ${i}`,
     'imgUrl': 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
+    'productName': `小米MIX手机 -- ${i}`,
+    'desc': '全面屏概念手机，不只是一块屏幕而是通往未来世界的门！',
     'publicTime': dateformat(faker.date.between('2000-01-01', '2017-05-30'), 'yyyy-mm-dd'),
     'productType': faker.random.arrayElement(['手机', '平板', '电脑', '相机', '手环']),
     'company': '北京小米科技有限公司',
     'grade': '8',
     'useCount': faker.random.number(),
+    'introduction': '小米MIX是北京时间2016年10月25日小米新品发布会上，发布的一款概念手机。小米MIX全面屏概念手机的设计师是当代著名的设计大师、民主设计和极简设计的倡导者菲利普·斯塔克。硬件方面，小米MIX采用6.4英寸屏幕，骁龙821,4+128GB，1600万像素PDAF相机，4400mAh电池，支持QC3.0，支持高精度SAP辅助定位，支持HD高清音质。并且MIX还有尊享版，搭配6+256GB内存，配有专享定制真皮保护套。售价方面，小米MIX售价3499/3999。将“物质越少，人性越多”的设计理念，延续至每个细节。第一次实现了整机无 Logo ，正面无实体按键设计。全新设计的风琴式精美包装，配备了一个专为小米MIX定制手工打造的纯皮保护壳。这一切，都只为让你从打开包装的那一刻起，就能感受到小米MIX那份独具匠心的魅力。',
   })
 }
 
@@ -59,7 +60,6 @@ for (let i=1; i<=20; i++) {
     'src': 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
     'title': `小米MIX手机 —— ${i}`,
     'desc': '8.5分/北京小米科技有限公司/2016-05-01',
-    'url': '/',
     'dateTime': dateformat(faker.date.between('2017-01-01', '2017-05-30'), 'yyyy-mm-dd hh:MM'),
   }])
 }

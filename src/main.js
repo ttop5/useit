@@ -3,6 +3,7 @@ import FastClick from 'fastclick';
 import VueRouter from 'vue-router';
 import App from './App';
 import Home from './views/Home';
+import Products from './views/Products';
 import News from './views/News';
 import Square from './views/Square';
 import Me from './views/Me';
@@ -19,6 +20,10 @@ const routes = [
   {
     path: '/',
     component: Home,
+  },
+  {
+    path: '/products',
+    component: Products,
   },
   {
     path: '/news',

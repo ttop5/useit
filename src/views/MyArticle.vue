@@ -15,7 +15,7 @@
         </p>
         <rater v-model="star" slot="value" disabled :font-size="15"></rater>
         <p class="content">{{ item[0].content }}</p>
-        <panel :list="item" type="1"></panel>
+        <panel :list="item" type="1" @click.native="showDetails(item[0].id)"></panel>
       </div>
       <divider>我是有底线的</divider>
     </div>
@@ -52,6 +52,9 @@ export default {
           }
         });
       });
+    },
+    showDetails(id) {
+      this.$router.push({ path: `/products?id=${id}` });
     },
   },
   created() {
