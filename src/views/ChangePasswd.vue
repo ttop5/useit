@@ -19,7 +19,7 @@
 
 <script>
 import { XHeader, Group, XInput, XButton, Alert } from 'vux';
-import { httpGet, httpPut } from '../lib/api';
+import { httpGet, httpPut } from '../utils/api';
 
 export default {
   components: {

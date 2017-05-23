@@ -20,7 +20,7 @@
 
 <script>
 import { XHeader, Group, XInput, XTextarea, Selector, Datetime, XButton, Alert } from 'vux';
-import { httpGet, httpPut } from '../lib/api';
+import { httpGet, httpPut } from '../utils/api';
 
 export default {
   components: {

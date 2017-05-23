@@ -25,7 +25,7 @@
 
 <script>
 import { XHeader, Blur, Panel, Divider, Rater } from 'vux';
-import { httpGet } from '../lib/api';
+import { httpGet } from '../utils/api';
 
 export default {
   components: {

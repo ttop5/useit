@@ -41,7 +41,7 @@
 /* eslint-disable */
 import { Search, Group, Cell, XButton, Swiper, SwiperItem, CellBox } from 'vux'
 import BottomBar from '../components/BottomBar';
-import { httpGet } from '../lib/api';
+import { httpGet } from '../utils/api';
 
 const imgList = [
   'https://static.vux.li/demo/1.jpg',

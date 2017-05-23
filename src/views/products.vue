@@ -24,7 +24,7 @@
 
 <script>
 import { XHeader } from 'vux';
-import { httpGet } from '../lib/api';
+import { httpGet } from '../utils/api';
 
 export default {
   components: {

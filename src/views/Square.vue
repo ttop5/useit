@@ -21,7 +21,7 @@
 <script>
 import { XHeader, Panel, Divider, Rater } from 'vux';
 import BottomBar from '../components/BottomBar';
-import { httpGet } from '../lib/api';
+import { httpGet } from '../utils/api';
 
 export default {
   components: {

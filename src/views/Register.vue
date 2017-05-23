@@ -21,7 +21,7 @@
 
 <script>
 import { XHeader, Group, XInput, XButton, Alert } from 'vux';
-import { httpPost } from '../lib/api';
+import { httpPost } from '../utils/api';
 
 export default {
   components: {
