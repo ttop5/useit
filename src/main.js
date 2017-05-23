@@ -5,6 +5,7 @@ import App from './App';
 import Home from './views/Home';
 import Products from './views/Products';
 import News from './views/News';
+import NewsItem from './views/NewsItem';
 import Square from './views/Square';
 import Me from './views/Me';
 import MyArticle from './views/MyArticle';
@@ -28,6 +29,10 @@ const routes = [
   {
     path: '/news',
     component: News,
+  },
+  {
+    path: '/news_item',
+    component: NewsItem,
   },
   {
     path: '/square',

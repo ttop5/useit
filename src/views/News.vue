@@ -3,16 +3,14 @@
     <x-header :left-options="{showBack: false}">新闻</x-header>
     <div class="content">
       <div style="margin: 10px;overflow: hidden;" v-for="item in articleList">
-        <a href=item.url>
-          <masker style="border-radius: 2px;">
-            <div class="m-img" :style="{backgroundImage: 'url(' + item.img + ')'}"></div>
-            <div slot="content" class="m-title">
-              {{ item.title }}
-              <br/>
-              <span class="m-desc">{{ item.desc }}</span>
-            </div>
-          </masker>
-        </a>
+        <masker style="border-radius: 2px;" @click.native="showDetails(item.id)">
+          <div class="m-img" :style="{backgroundImage: 'url(' + item.img + ')'}"></div>
+          <div slot="content" class="m-title">
+            {{ item.title }}
+            <br/>
+            <span class="m-desc">{{ item.desc }}</span>
+          </div>
+        </masker>
       </div>
       <divider>我是有底线的</divider>
     </div>
@@ -43,6 +41,9 @@ export default {
       httpGet('/news').then((response) => {
         this.articleList = response.data;
       });
+    },
+    showDetails(id) {
+      this.$router.push({ path: `/news_item?id=${id}` });
     },
   },
   created() {
