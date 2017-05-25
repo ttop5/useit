@@ -10,15 +10,13 @@
       <p class="errorMessage">{{ errorMessage }}</p>
       <x-button type="primary" @click.native="changePasswd">确定</x-button>
     </div>
-    <div>
-       <alert v-model="alertShow" :title="alertTitle" :content="alertContent"></alert>
-    </div>
+    <toast v-model="toastShow" type="toastType" :time="1000">{{ toastContent }}</toast>
   </div>
 </template>
 
 
 <script>
-import { XHeader, Group, XInput, XButton, Alert } from 'vux';
+import { XHeader, Group, XInput, XButton, Toast } from 'vux';
 import { httpGet, httpPut } from '../utils/api';
 
 export default {
@@ -27,7 +25,7 @@ export default {
     Group,
     XInput,
     XButton,
-    Alert,
+    Toast,
   },
   data() {
     return {
@@ -38,9 +36,9 @@ export default {
       newPassword: '',
       confirmPassword: '',
       errorMessage: '',
-      alertTitle: '',
-      alertContent: '',
-      alertShow: false,
+      toastShow: false,
+      toastType: '',
+      toastContent: '',
     };
   },
   methods: {
@@ -57,13 +55,14 @@ export default {
         this.user.password = this.newPassword;
         httpPut(`/users/${this.user.id}`, this.user).then((response) => {
           if (response.status === 200) {
-            this.alertShow = true;
-            this.alertTitle = '恭喜';
-            this.alertContent = '修改成功！';
+            this.toastShow = true;
+            this.toastType = '';
+            this.toastContent = '修改成功！';
+            setTimeout(() => this.$router.push({ path: '/me' }), 1000);
           } else {
-            this.alertShow = true;
-            this.alertTitle = '抱歉';
-            this.alertContent = '修改失败！';
+            this.toastShow = true;
+            this.toastType = 'cancel';
+            this.toastContent = '修改失败！';
           }
         });
       }

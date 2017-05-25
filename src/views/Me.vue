@@ -16,7 +16,8 @@
           <cell-box is-link link="/changepasswd">密码修改</cell-box>
           <cell-box is-link link="/aboutsoft">关于UseIt</cell-box>
         </group>
-        <x-button @click.native="logout" type="warn">退出登陆</x-button>
+        <actionsheet v-model="sheetShow" :menus="sheetMenus"  @on-click-menu-delete="logout" show-cancel></actionsheet>
+        <x-button @click.native="sheetShow = true" type="warn">退出登录</x-button>
       </div>
       <!-- 未登陆 -->
       <div v-if="username === null" class="login-button">
@@ -31,7 +32,7 @@
 
 
 <script>
-import { XHeader, XButton, Blur, Group, CellBox } from 'vux';
+import { XHeader, XButton, Blur, Group, CellBox, Actionsheet } from 'vux';
 import BottomBar from '../components/BottomBar';
 
 export default {
@@ -42,12 +43,18 @@ export default {
     Blur,
     Group,
     CellBox,
+    Actionsheet,
   },
   data() {
     return {
       username: '',
       show: false,
       imgUrl: 'https://o3e85j0cv.qnssl.com/waterway-107810__340.jpg',
+      sheetShow: false,
+      sheetMenus: {
+        'title.noop': '你确定要退出登录么？',
+        delete: '<span style="color:red">确定</span>',
+      },
     };
   },
   methods: {

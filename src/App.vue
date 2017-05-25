@@ -29,5 +29,9 @@ body {
 }
 .errorMessage {
   color: #f73100;
+  text-align: center;
+}
+button.weui-btn, input.weui-btn {
+  margin-top: 15px;
 }
 </style>

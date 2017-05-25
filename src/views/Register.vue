@@ -12,15 +12,13 @@
       <p class="errorMessage">{{ errorMessage }}</p>
       <x-button type="primary" @click.native="register">注册</x-button>
     </div>
-    <div>
-       <alert v-model="alertShow" :title="alertTitle" :content="alertContent"></alert>
-    </div>
+    <toast v-model="toastShow" type="toastType" :time="1000">{{ toastContent }}</toast>
   </div>
 </template>
 
 
 <script>
-import { XHeader, Group, XInput, XButton, Alert } from 'vux';
+import { XHeader, Group, XInput, XButton, Toast } from 'vux';
 import { httpPost } from '../utils/api';
 
 export default {
@@ -29,7 +27,7 @@ export default {
     Group,
     XInput,
     XButton,
-    Alert,
+    Toast,
   },
   data() {
     return {
@@ -38,33 +36,39 @@ export default {
       password: '',
       confirmPassword: '',
       errorMessage: '',
-      alertTitle: '',
-      alertContent: '',
-      alertShow: false,
+      toastShow: false,
+      toastType: '',
+      toastContent: '',
     };
   },
   methods: {
     register() {
       if (this.username && this.email && this.password && this.confirmPassword) {
-        if (this.password === this.confirmPassword) {
+        if (this.password.length >= 6 && this.password === this.confirmPassword) {
           const userInfo = {
             username: this.username,
             email: this.email,
             password: this.password,
           };
-          httpPost('/users', userInfo).then((response) => {
-            if (response.status === 201) {
-              this.alertTitle = '恭喜';
-              this.alertContent = '您已注册成功，请前往登陆！';
-              this.alertShow = true;
-            } else {
-              this.alertTitle = '抱歉';
-              this.alertContent = '由于未知原因，你此次注册失败了！';
-              this.alertShow = true;
-            }
-          });
+          const emailRe = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+          if (emailRe.test(this.email)) {
+            httpPost('/users', userInfo).then((response) => {
+              if (response.status === 201) {
+                this.toastShow = true;
+                this.toastType = '';
+                this.toastContent = '注册成功！';
+                setTimeout(() => this.$router.push({ path: '/login' }), 1000);
+              } else {
+                this.toastShow = true;
+                this.toastType = 'cancel';
+                this.toastContent = '修改失败！';
+              }
+            });
+          } else {
+            this.errorMessage = '请输入正确的邮箱';
+          }
         } else {
-          this.errorMessage = '两次密码不一致！';
+          this.errorMessage = '密码长度小于6位或者两次密码不一致！';
         }
       } else {
         this.errorMessage = '所有字段均不能为空！';
