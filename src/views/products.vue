@@ -5,33 +5,39 @@
       <div class="img">
         <img src="../assets/imges/mix.png" />
       </div>
-      <div>
-        <h2>{{ product.productName }}</h2>
-        <p>{{ product.desc }}</p>
-        <p>公司：{{ product.company }}</p>
-      <p>发布时间：{{ product.publicTime }}</p>
+      <p class="desc">{{ product.desc }}</p>
+      <div class="word">
+        <div class="info">
+          <h2>{{ product.productName }}</h2>
+          <p>公司：{{ product.company }}</p>
+          <p>发布时间：{{ product.publicTime }}</p>
+        </div>
+        <div class="grade">
+          <p>爱数码评分<br /><span>{{ product.grade }}</span></p>
+          <rater v-model="star" slot="value" disabled :font-size="12"></rater>
+          <p>{{ product.useCount }}人</p>
+        </div>
+        <x-button type="primary">我使用过</x-button>
+        <div class="intro">{{ product.introduction }}</div>
       </div>
-      <div>
-        <p>爱数码评分：<span>{{ product.grade }}</span></p>
-        <span>(这里显示*****)</span>
-        <p>{{ product.useCount }}人</p>
-      </div>
-      <div>{{ product.introduction }}</div>
     </div>
   </div>
 </template>
 
 
 <script>
-import { XHeader } from 'vux';
+import { XHeader, Rater, XButton } from 'vux';
 import { httpGet } from '../utils/api';
 
 export default {
   components: {
     XHeader,
+    Rater,
+    XButton,
   },
   data() {
     return {
+      star: 4,
       product: {},
     };
   },
@@ -55,11 +61,53 @@ export default {
     background-color: #0c0d0e;
   }
   .content {
+    background-color: #fbf0f0;
     .img {
       text-align: center;
       img {
         width: 100%;
         height: 200px;
+      }
+    }
+    .desc {
+      font-size: 0.76em;
+      text-align: center;
+    }
+    .word {
+      padding: 0px 10px;
+      .info {
+        margin-top: 15px;
+        h2 {
+          font-size: 1.3em;
+        }
+        p {
+          font-size: .7em;
+          color: #5f5a5a;
+        }
+      }
+      .grade {
+        background-color: #fff;
+        float: right;
+        text-align: center;
+        font-size: .5em;
+        color: #ababab;
+        margin: -6em 1.2em 0em 0em;
+        padding: 0px 5px;
+        box-shadow: 5px 5px 5px #888;
+        p > span {
+          color: #000;
+          font-size: 20px;
+          line-height: 20px;
+          font-weight: bold;
+        }
+      }
+      button.weui-btn, input.weui-btn {
+        margin: 25px 0px;
+      }
+      .intro {
+        margin-top: -10px;
+        font-size: .9em;
+        text-align: justify;
       }
     }
   }
