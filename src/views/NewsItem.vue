@@ -3,7 +3,7 @@
     <x-header class="header" :left-options="{backText: ''}">新闻</x-header>
     <div class="content">
       <h2>{{ news.title }}</h2>
-      <span>{{ news.dateTime }}</span>
+      <p class="datetime">{{ news.dateTime }}</p>
       <img :src="news.img" />
       <p>{{ news.content }}</p>
     </div>
@@ -41,13 +41,24 @@ export default {
 <style lang="less">
 .news-item-view {
   .content {
+    h2 {
+      font-size: 1.3em;
+      text-align: center;
+      padding-top: 10px;
+    }
+    .datetime {
+      text-align: center;
+      color: #9e9e9e;
+      padding: 0px;
+    }
     img {
       width: 100%;
       height: 200px;
     }
     p {
-      text-indent: 2em;
-      padding: 5px;
+      font-size: .9em;
+      padding: 10px;
+      text-align: justify;
     }
   }
 }
