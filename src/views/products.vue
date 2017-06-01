@@ -20,13 +20,20 @@
         <x-button type="primary">我使用过</x-button>
         <div class="intro">{{ product.introduction }}</div>
       </div>
+      <divider>评论区</divider>
+      <div v-for="item in product.commonts" class="commont">
+        <span>【{{ item.user }}】 </span>
+        <rater v-model="star" slot="value" disabled :font-size="12"></rater>
+        <p>{{ item.commont }}</p>
+        <p>{{ item.dateTime }}</p>
+      </div>
     </div>
   </div>
 </template>
 
 
 <script>
-import { XHeader, Rater, XButton } from 'vux';
+import { XHeader, Rater, XButton, Divider } from 'vux';
 import { httpGet } from '../utils/api';
 
 export default {
@@ -34,6 +41,7 @@ export default {
     XHeader,
     Rater,
     XButton,
+    Divider,
   },
   data() {
     return {
@@ -61,7 +69,6 @@ export default {
     background-color: #0c0d0e;
   }
   .content {
-    background-color: #fbf0f0;
     .img {
       text-align: center;
       img {
@@ -109,6 +116,18 @@ export default {
         font-size: .9em;
         text-align: justify;
       }
+    }
+  }
+  .commont {
+    p {
+      padding-left: 10px;
+    }
+    p:nth-child(3) {
+      font-size: .9em;
+    }
+    p:nth-child(4) {
+      font-size: .5em;
+      color: #ababab;
     }
   }
 }
