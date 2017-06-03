@@ -13,54 +13,18 @@ import Register from '../views/Register';
 
 
 const routes = [
-  {
-    path: '/',
-    component: Home,
-  },
-  {
-    path: '/products',
-    component: Products,
-  },
-  {
-    path: '/news',
-    component: News,
-  },
-  {
-    path: '/news_item',
-    component: NewsItem,
-  },
-  {
-    path: '/square',
-    component: Square,
-  },
-  {
-    path: '/me',
-    component: Me,
-  },
-  {
-    path: '/myarticle',
-    component: MyArticle,
-  },
-  {
-    path: '/accountsetting',
-    component: AccountSetting,
-  },
-  {
-    path: '/changepasswd',
-    component: ChangePasswd,
-  },
-  {
-    path: '/aboutsoft',
-    component: AboutSoft,
-  },
-  {
-    path: '/login',
-    component: Login,
-  },
-  {
-    path: '/register',
-    component: Register,
-  },
+  { path: '/', component: Home },
+  { path: '/products', component: Products },
+  { path: '/news', component: News },
+  { path: '/news_item', component: NewsItem },
+  { path: '/square', component: Square },
+  { path: '/me', component: Me },
+  { path: '/myarticle', component: MyArticle },
+  { path: '/accountsetting', component: AccountSetting },
+  { path: '/changepasswd', component: ChangePasswd },
+  { path: '/aboutsoft', component: AboutSoft },
+  { path: '/login', component: Login },
+  { path: '/register', component: Register },
 ];
 
 export default routes;
