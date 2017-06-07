@@ -1,5 +1,5 @@
 <template>
-  <div class="account-setting-view">
+  <div v-if="localUsername" class="account-setting-view">
     <x-header class="header" :left-options="{backText: ''}">账号设置</x-header>
     <div class="content">
       <group title="">

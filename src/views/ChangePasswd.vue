@@ -1,5 +1,5 @@
 <template>
-  <div class="change-passwd-view">
+  <div v-if="localUsername" class="change-passwd-view">
     <x-header class="header" :left-options="{backText: ''}">密码修改</x-header>
     <div class="content">
       <group>

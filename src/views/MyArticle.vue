@@ -1,5 +1,5 @@
 <template>
-  <div class="my-article-view">
+  <div v-if="localUsername" class="my-article-view">
     <x-header class="header" :left-options="{backText: ''}">我的动态</x-header>
     <div class="content">
       <div class="head-img">

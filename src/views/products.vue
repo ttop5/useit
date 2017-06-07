@@ -17,7 +17,7 @@
           <rater v-model="star" slot="value" disabled :font-size="12"></rater>
           <p>{{ product.useCount }}人</p>
         </div>
-        <x-button type="primary">我使用过</x-button>
+        <x-button v-if="localUsername" type="primary">我使用过</x-button>
         <div class="intro">{{ product.introduction }}</div>
       </div>
       <divider>评论区</divider>
@@ -45,6 +45,7 @@ export default {
   },
   data() {
     return {
+      localUsername: '',
       star: 4,
       product: {},
     };
@@ -57,6 +58,7 @@ export default {
     },
   },
   created() {
+    this.localUsername = sessionStorage.getItem('username');
     this.getProduct();
   },
 };
@@ -109,10 +111,10 @@ export default {
         }
       }
       button.weui-btn, input.weui-btn {
-        margin: 25px 0px;
+        margin: 25px 0px 0px 0px;
       }
       .intro {
-        margin-top: -10px;
+        margin-top: 15px;
         font-size: .9em;
         text-align: justify;
       }
