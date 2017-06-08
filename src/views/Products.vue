@@ -1,5 +1,5 @@
 <template>
-  <div class="home-view">
+  <div class="products-view">
     <x-header class="header" :left-options="{backText: ''}">产品</x-header>
     <div class="content">
       <div class="img">
@@ -78,7 +78,7 @@ export default {
 
 
 <style lang="less">
-.home-view {
+.products-view {
   .vux-header {
     background-color: #0c0d0e;
   }
