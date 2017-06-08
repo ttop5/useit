@@ -93,10 +93,6 @@ export default {
       margin-top: -40px;
       margin-bottom: 20px;
     }
-    button.weui-btn, input.weui-btn {
-      width: 95%;
-      margin-top: 15px;
-    }
     .login-button {
       button {
         width: 60%;

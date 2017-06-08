@@ -83,10 +83,6 @@ export default {
       text-align: center;
     }
     padding-top: 70px;
-    button.weui-btn, input.weui-btn {
-      width: 95%;
-      margin-top: 20px;
-    }
   }
 }
 </style>

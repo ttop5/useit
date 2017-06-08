@@ -78,10 +78,6 @@ export default {
     .weui-cell_access .weui-cell__ft {
       color: #333;
     }
-    button.weui-btn, input.weui-btn {
-      width: 95%;
-      margin-top: 20px;
-    }
   }
 }
 </style>
