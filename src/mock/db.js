@@ -66,7 +66,7 @@ for (let i=1; i<=20; i++) {
     'content': `配置给力，外观牛逼，屏占比超高啊！${i}`,
     'src': 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
     'title': `小米MIX手机 —— ${i}`,
-    'desc': '8.5分/北京小米科技有限公司/2016-05-01',
+    'desc': '8分/北京小米科技有限公司/2016-05-01',
     'dateTime': dateformat(faker.date.between('2017-01-01', '2017-05-30'), 'yyyy-mm-dd hh:MM'),
   }])
 }

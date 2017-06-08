@@ -1,5 +1,7 @@
 import Home from '../views/Home';
 import Products from '../views/Products';
+import Statistics from '../views/Statistics';
+import Evaluate from '../views/Evaluate';
 import News from '../views/News';
 import NewsItem from '../views/NewsItem';
 import Square from '../views/Square';
@@ -15,6 +17,8 @@ import Register from '../views/Register';
 const routes = [
   { path: '/', component: Home },
   { path: '/products', component: Products },
+  { path: '/statistics', component: Statistics },
+  { path: '/evaluate', component: Evaluate },
   { path: '/news', component: News },
   { path: '/news_item', component: NewsItem },
   { path: '/square', component: Square },

@@ -12,12 +12,17 @@
           <p>公司：{{ product.company }}</p>
           <p>发布时间：{{ product.publicTime }}</p>
         </div>
-        <div class="grade">
-          <p>爱数码评分<br /><span>{{ product.grade }}</span></p>
-          <rater v-model="star" slot="value" disabled :font-size="12"></rater>
-          <p>{{ product.useCount }}人</p>
-        </div>
-        <x-button v-if="localUsername" type="primary">我使用过</x-button>
+        <router-link :to="statisticsUrl" >
+          <div class="grade">
+            <p>爱数码评分<br />
+              <span>{{ product.grade }}</span>
+            </p>
+            <rater v-model="star" slot="value" disabled :font-size="12"></rater>
+            <p>{{ product.useCount }}人</p>
+          </div>
+        </router-link>
+        <x-button v-if="localUsername"
+          type="primary" @click.native="goEvaluate">我使用过</x-button>
         <div class="intro">{{ product.introduction }}</div>
       </div>
       <divider>评论区</divider>
@@ -46,6 +51,7 @@ export default {
   data() {
     return {
       localUsername: '',
+      statisticsUrl: '',
       star: 4,
       product: {},
     };
@@ -56,10 +62,16 @@ export default {
         this.product = response.data[0];
       });
     },
+    goEvaluate() {
+      this.$router.push({ path: `/evaluate?id=${this.$route.query.id}` });
+    },
   },
   created() {
     this.localUsername = sessionStorage.getItem('username');
     this.getProduct();
+  },
+  mounted() {
+    this.statisticsUrl = `/statistics?id=${this.$route.query.id}`;
   },
 };
 </script>
