@@ -79,6 +79,7 @@ export default {
 
 <style lang="less">
 .products-view {
+  padding-bottom: 10px;
   .vux-header {
     background-color: #0c0d0e;
   }
@@ -123,7 +124,7 @@ export default {
         }
       }
       button.weui-btn, input.weui-btn {
-        margin: 25px 0px 0px 0px;
+        margin: 25px 0px 0px 7px;
       }
       .intro {
         margin-top: 15px;
