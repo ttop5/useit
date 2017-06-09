@@ -14,7 +14,7 @@ for (let i=1; i<=20; i++) {
   })
 }
 
-// 电子产品列表
+// 数码产品列表
 const products = []
 for (let i=1; i<=200; i++) {
   products.push({
@@ -39,6 +39,31 @@ for (let i=1; i<=200; i++) {
   })
 }
 
+// 评分情况
+const statistics = []
+for (let i=1; i<=20; i++) {
+  statistics.push({
+    'id': i,
+    'productName': `小米MIX手机 -- ${i}`,
+    'pieData': [
+      { 'value': faker.random.number(), 'name': '1星' },
+      { 'value': faker.random.number(), 'name': '2星' },
+      { 'value': faker.random.number(), 'name': '3星' },
+      { 'value': faker.random.number(), 'name': '4星' },
+      { 'value': faker.random.number(), 'name': '5星' },
+    ],
+    'lineData': {
+      'xData': ['1星', '2星', '3星', '4星', '5星'],
+      'yData': [
+        faker.random.number(),
+        faker.random.number(),
+        faker.random.number(),
+        faker.random.number(),
+        faker.random.number(),
+      ],
+    },
+  })
+}
 // 新闻
 const news = []
 for (let i=1; i<=20; i++) {
@@ -90,6 +115,7 @@ for (let i = 1; i <=20 ; i++) {
 module.exports = {
   hotSearch,
   products,
+  statistics,
   news,
   square,
   users,

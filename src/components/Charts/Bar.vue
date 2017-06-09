@@ -5,6 +5,7 @@
 
 
 <script>
+/* eslint-disable */
 import echarts from 'echarts'
 
 export default {
@@ -27,10 +28,8 @@ export default {
       default: () => {
         return {
           chartData: {
-            xData: ['01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00',
-              '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00',
-              '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '24:00'],
-            yData: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            xData: ['1星', '2星', '3星', '4星', '5星'],
+            yData: [0, 0, 0, 0, 0],
           },
         }
       },
@@ -44,7 +43,7 @@ export default {
         title: {
           text: this.chartTitle,
           x: '50%',
-          y: '4%',
+          y: '15%',
           textAlign: 'center',
           textStyle: {
             color: '#a8a8a8',
@@ -97,9 +96,6 @@ export default {
                 {
                   type: 'max',
                   name: '最大值',
-                }, {
-                  type: 'min',
-                  name: '最小值',
                 },
               ],
             },
@@ -111,14 +107,6 @@ export default {
   },
   mounted() {
     this.drawBarChart()
-    this.$store.watch(
-      (state) => {
-        return state.leftbar.wide
-      },
-      () => {
-        this.drawBarChart()
-      },
-    )
   },
   updated() {
     this.drawBarChart()

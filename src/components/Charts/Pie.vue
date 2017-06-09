@@ -5,6 +5,7 @@
 
 
 <script>
+/* eslint-disable */
 import echarts from 'echarts'
 
 export default {
@@ -20,10 +21,15 @@ export default {
     },
     chartData: {
       type: Array,
-      default: [
-        { value: 0, name: '' },
-        { value: 0, name: '' },
-      ],
+      default: () => {
+        return [
+          { value: 0, name: '1星' },
+          { value: 0, name: '2星' },
+          { value: 0, name: '3星' },
+          { value: 0, name: '4星' },
+          { value: 0, name: '5星' },
+        ];
+      },
     },
   },
   methods: {
@@ -33,7 +39,7 @@ export default {
         title: {
           text: this.chartTitle,
           x: '50%',
-          y: '4%',
+          y: '0%',
           textAlign: 'center',
           textStyle: {
             color: '#a8a8a8',
@@ -42,7 +48,7 @@ export default {
         },
         tooltip: {
           trigger: 'item',
-          formatter: '{a} <br/>{b} : {c} ({d}%)',
+          formatter: '<br/>{b} : {d}%',
         },
         series: [
           {
@@ -65,14 +71,6 @@ export default {
   },
   mounted() {
     this.drawPieChart()
-    this.$store.watch(
-      (state) => {
-        return state.leftbar.wide
-      },
-      () => {
-        this.drawPieChart()
-      },
-    )
   },
   updated() {
     this.drawPieChart()
