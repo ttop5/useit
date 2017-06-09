@@ -55,6 +55,7 @@ export default {
           desc: `${this.raterData * 2}分/北京小米科技有限公司/2016-05-01`,
           dateTime: nowDateTime,
         }];
+        setTimeout(() => this.$router.push({ path: '/square' }), 1000);
         httpPost('/square', squareInfo).then((response) => {
           if (response.status === 201) {
             this.toastShow = true;
